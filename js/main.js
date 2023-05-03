@@ -6,6 +6,24 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+document.addEventListener('click', (e) => {
+    console.log(e.target.dataset)
+    const type = e.target.dataset.type
+
+    if (type === 'lock') {
+            const node = e.target.tagName.toLowerCase() === 'i'
+            ? e.target
+            : e.target.children[0]
+
+        console.log(node)
+
+        node.classList.toggle('fa-lock-open');
+        node.classList.toggle('fa-lock');
+
+
+    }
+})
+
 function setRandomColors() {
     cols.forEach((col) => {
         const text = col.querySelector('h2')
